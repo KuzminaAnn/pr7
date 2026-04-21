@@ -6,14 +6,24 @@ using System.Threading.Tasks;
 
 namespace pr7
 {
+    /// <summary>
+    /// Пространство имен, содержащее приложение для демонстрации работы со списком объектов галактик.
+    /// </summary>
     internal class Program
     {
+        /// <summary>
+        /// Точка входа в приложение, которая выводит приветствие, запускает перебор списка галактик и ожидает нажатия клавиши.
+        /// </summary>
+        /// <param name="args">Массив строк, содержащий аргументы командной строки</param>
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Galaxy News!");
             IterateThroughList();
             Console.ReadKey();
         }
+        /// <summary>
+        /// Метод, создающий список объектов галактик и выводящий их названия, расстояние и тип в консоль.
+        /// </summary>
         private static void IterateThroughList()
         {
             var theGalaxies = new List<Galaxy>
@@ -40,7 +50,9 @@ namespace pr7
             //  Maffei 1,  11,  Elliptical
         }
     }
-
+    /// <summary>
+    /// Класс, представляющий данные об отдельной галактике, включая её название, расстояние и морфологический тип.
+    /// </summary>
     public class Galaxy
     {
         public string Name { get; set; }
@@ -49,9 +61,15 @@ namespace pr7
         public GType GalaxyType { get; set; }
 
     }
-
+    /// <summary>
+    /// Класс-обертка, преобразующий символьный код типа галактики в человекочитаемое перечисление.
+    /// </summary>
     public class GType
     {
+        /// <summary>
+        /// Инициализирует новый экземпляр класса GType, преобразуя символьный код
+        /// </summary>
+        /// <param name="type">Символьный код типа галактики</param>
         public GType(char type)
         {
             switch (type)
@@ -72,7 +90,13 @@ namespace pr7
                     break;
             }
         }
+        /// <summary>
+        /// Свойство, хранящее значение перечисления, соответствующее типу галактики
+        /// </summary>
         public object MyGType { get; set; }
+        /// <summary>
+        /// Закрытое перечисление, определяющее возможные морфологические типы галактик.
+        /// </summary>
         private enum Type { Spiral, Elliptical, Irregular, Lenticular }
     }
 }

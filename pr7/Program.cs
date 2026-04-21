@@ -10,6 +10,7 @@ namespace pr7
     {
         static void Main(string[] args)
         {
+
         }
     }
 }
